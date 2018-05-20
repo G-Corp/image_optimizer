@@ -1,0 +1,4 @@
+%{
+  "bucs": {:hex, :bucs, "1.0.15", "44fc10dc863184fb99b1b7d25af5b1fa06355d0003800629668fbc37f3f9b6bd", [:make, :mix, :rebar3], [], "hexpm"},
+  "doteki": {:hex, :doteki, "1.0.6", "a953213c8c34e5af8de22cb48779bb6390f0d352d43ece3b75223bd941ec543b", [:make, :mix, :rebar3], [{:bucs, "~> 1.0.11", [hex: :bucs, repo: "hexpm", optional: false]}], "hexpm"},
+}
