@@ -11,31 +11,23 @@ __Authors:__ Gregoire Lejeune ([`gregoire.lejeune@gmail.com`](mailto:gregoire.le
 
 ### Requirements ###
 
-* [OptiPNG](http://optipng.sourceforge.net/)
+* [OptiPNG](http://optipng.sourceforge.net/) or [pngquant](https://pngquant.org/)
 
-* [pngquant](https://pngquant.org/)
+* [jpegoptim](https://github.com/tjko/jpegoptim) or [mozjpeg](https://github.com/mozilla/mozjpeg)
 
-* [jpegoptim](https://github.com/tjko/jpegoptim)
-
-* [mozjpeg](https://github.com/mozilla/mozjpeg)
-
-* [scour](https://github.com/scour-project/scour)
-
-* [svgo](https://github.com/svg/svgo)
+* [scour](https://github.com/scour-project/scour) or [svgo](https://github.com/svg/svgo)
 
 * [gifsicle](http://www.lcdf.org/gifsicle/)
 
-* [ImageMagick®](https://www.imagemagick.org/)
+* [ImageMagick®](https://www.imagemagick.org/) (optional)
 
 
 
 ### Licence ###
 
-VICE is available for use under the following license, commonly known as the 3-clause (or "modified") BSD license:
+image_optimizer is available for use under the following license, commonly known as the 3-clause (or "modified") BSD license:
 
-Copyright (c) 2014-2015 Grégoire Lejeune<br />
-Copyright (c) 2016 BotsUnit<br />
-Copyright (c) 2017-2018 G-Corp<br />
+Copyright (c) 2018 G-Corp<br />
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 

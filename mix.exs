@@ -20,8 +20,7 @@ defmodule Image.Optimizer.Mixfile do
   def application do
     [
        applications: [],
-       env: [],
-       mod: {:image_optimizer_app, []}
+       env: []
     ]
   end
 

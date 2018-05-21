@@ -7,26 +7,21 @@
 <h3>Requirements</h3>
 
 <ul>
-<li><a href="http://optipng.sourceforge.net/">OptiPNG</a></li>
-<li><a href="https://pngquant.org/">pngquant</a></li>
-<li><a href="https://github.com/tjko/jpegoptim">jpegoptim</a></li>
-<li><a href="https://github.com/mozilla/mozjpeg">mozjpeg</a></li>
-<li><a href="https://github.com/scour-project/scour">scour</a></li>
-<li><a href="https://github.com/svg/svgo">svgo</a></li>
+<li><a href="http://optipng.sourceforge.net/">OptiPNG</a> or <a href="https://pngquant.org/">pngquant</a></li>
+<li><a href="https://github.com/tjko/jpegoptim">jpegoptim</a> or <a href="https://github.com/mozilla/mozjpeg">mozjpeg</a></li>
+<li><a href="https://github.com/scour-project/scour">scour</a> or <a href="https://github.com/svg/svgo">svgo</a></li>
 <li><a href="http://www.lcdf.org/gifsicle/">gifsicle</a></li>
-<li><a href="https://www.imagemagick.org/">ImageMagick&#174;</a></li>
+<li><a href="https://www.imagemagick.org/">ImageMagick&#174;</a> (optional)</li>
 </ul>
 
 <h3>Licence</h3>
 
 <p>
-VICE is available for use under the following license, commonly known as the 3-clause (or "modified") BSD license:
+image_optimizer is available for use under the following license, commonly known as the 3-clause (or "modified") BSD license:
 </p>
 
 <p>
-Copyright (c) 2014-2015 Grégoire Lejeune<br />
-Copyright (c) 2016 BotsUnit<br />
-Copyright (c) 2017-2018 G-Corp<br />
+Copyright (c) 2018 G-Corp<br />
 </p>
 
 <p>
