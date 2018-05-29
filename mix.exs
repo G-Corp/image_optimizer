@@ -26,8 +26,8 @@ defmodule Image.Optimizer.Mixfile do
 
   defp deps do
     [
-      {:bucs, "~> 1.0.15"},
-      {:doteki, "~> 1.0.6"}
+      {:bucs, git: "git://github.com/G-Corp/bucs.git", branch: "master"},
+      {:doteki, git: "git://github.com/G-Corp/doteki.git", branch: "master"}
     ]
   end
 
