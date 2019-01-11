@@ -13,7 +13,7 @@ __Authors:__ Gregoire Lejeune ([`gregoire.lejeune@gmail.com`](mailto:gregoire.le
 
 * [OptiPNG](http://optipng.sourceforge.net/) or [pngquant](https://pngquant.org/)
 
-* [jpegoptim](https://github.com/tjko/jpegoptim) or [mozjpeg](https://github.com/mozilla/mozjpeg)
+* [jpegoptim](https://github.com/tjko/jpegoptim) or [mozjpeg](https://github.com/mozilla/mozjpeg) or [JPEG Archive](https://github.com/danielgtaylor/jpeg-archive)
 
 * [scour](https://github.com/scour-project/scour) or [svgo](https://github.com/svg/svgo)
 
@@ -38,6 +38,7 @@ Redistribution and use in source and binary forms, with or without modification,
 
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
 
 ## Modules ##

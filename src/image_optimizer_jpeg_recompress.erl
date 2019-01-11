@@ -1,5 +1,5 @@
 % @hidden
--module(image_optimizer_cjpeg).
+-module(image_optimizer_jpeg_recompress).
 -behaviour(image_optimizer).
 
 -export([optimize/3]).
@@ -7,8 +7,8 @@
 optimize(Executable, File, Options) ->
   {Rename, Input, Output} = output(File, Options),
   Cmd = [Executable,
-         options(Options, [{quality, 75}, {quiet, true}]),
-         <<" ", (bucs:to_binary(Input))/binary, " >", (bucs:to_binary(Output))/binary>>],
+         options(Options, [{quality, 50}, {quiet, true}]),
+         <<" ", (bucs:to_binary(Input))/binary, " ", (bucs:to_binary(Output))/binary>>],
   case image_optimizer:run(iolist_to_binary(Cmd)) of
     {ok, _} ->
       case Rename of
@@ -41,7 +41,7 @@ extension(File) ->
   end.
 
 options(Options, Default) ->
-  options(Options, Default, [" -optimize"]).
+  options(Options, Default, [" --accurate", " --method mpe"]).
 
 options(_Options, [], Acc) ->
   lists:reverse(Acc);
@@ -53,8 +53,16 @@ options(Options, [{Option, Default}|Rest], Acc) ->
     format(Option, Value, Acc)).
 
 format(quality, Value, Acc) ->
-  [io_lib:format(" -quality ~p", [Value])|Acc];
-format(quiet, false, Acc) ->
-  [" -verbose"|Acc];
+  [io_lib:format(" --quality ~p", [quality(Value)])|Acc];
+format(quiet, true, Acc) ->
+  [" --quiet"|Acc];
 format(_Option, _Value, Acc) ->
   Acc.
+
+quality(Value) ->
+  case Value of
+    Value when Value =< 25 -> low;
+    Value when Value > 25 andalso Value =< 50 -> medium;
+    Value when Value > 50 andalso Value =< 75 -> high;
+    _ -> veryhigh
+  end.

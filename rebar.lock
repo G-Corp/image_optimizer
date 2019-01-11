@@ -5,4 +5,8 @@
  {<<"doteki">>,
   {git,"git://github.com/G-Corp/doteki.git",
        {ref,"645337f8e037b88c6a4a71adc75a34a462bcb638"}},
+  0},
+ {<<"ephemeral">>,
+  {git,"git://github.com/G-Corp/ephemeral.git",
+       {ref,"08ab80db1dac8f561df23b9b3342a2f6dc2fa373"}},
   0}].

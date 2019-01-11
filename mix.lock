@@ -1,4 +1,5 @@
 %{
   "bucs": {:git, "git://github.com/G-Corp/bucs.git", "042a7144b6729579c2d1a85eba475cbd70719484", [branch: "master"]},
   "doteki": {:git, "git://github.com/G-Corp/doteki.git", "645337f8e037b88c6a4a71adc75a34a462bcb638", [branch: "master"]},
+  "ephemeral": {:git, "git://github.com/G-Corp/ephemeral.git", "08ab80db1dac8f561df23b9b3342a2f6dc2fa373", [branch: "master"]},
 }

@@ -9,8 +9,17 @@
          , os_find_executable/1
         ]).
 
+-type optimizer() :: pngquant
+                     | optipng
+                     | jpegoptim
+                     | cjpeg
+                     | jpeg_recompress
+                     | svgo
+                     | scour
+                     | gifsicle.
 -type options() :: [option()].
 -type option() :: {quality, integer()}
+                  | {use, optimizer() | [optimizer()]}
                   | {quiet, true | false}
                   | {strip_metadata, true | false}
                   | {output, file:filename_all()}.
@@ -61,28 +70,38 @@ optimize([Optimizer|Rest], File, Options, Error) ->
   end.
 
 optimizer("png") -> [pngquant, optipng];
-optimizer("jpeg") -> [jpegoptim, cjpeg];
-optimizer("jpg") -> [jpegoptim, cjpeg];
+optimizer("jpeg") -> [jpegoptim, cjpeg, jpeg_recompress];
+optimizer("jpg") -> [jpegoptim, cjpeg, jpeg_recompress];
 optimizer("svg") -> [svgo, scour];
 optimizer("gif") -> [gifsicle];
 optimizer(_) -> undefined.
 
 optimizer(File, Options) ->
-  case proplists:get_bool(identify, Options) of
-    true ->
-      case find_executable(identify) of
+  case proplists:get_value(use, Options, undefined) of
+    undefined ->
+      case proplists:get_bool(identify, Options) of
+        true ->
+          case find_executable(identify) of
+            false ->
+              optimizer_by_extension(File);
+            Identify ->
+              case bucos:run({"~ts -format \"%m\" \"~ts\"", [Identify, File]}) of
+                {ok, Format} ->
+                  optimizer(bucstring:lowercase(Format));
+                _ ->
+                  undefined
+              end
+          end;
         false ->
-          optimizer_by_extension(File);
-        Identify ->
-          case bucos:run({"~ts -format \"%m\" \"~ts\"", [Identify, File]}) of
-            {ok, Format} ->
-              optimizer(bucstring:lowercase(Format));
-            _ ->
-              undefined
-          end
+          optimizer_by_extension(File)
       end;
-    false ->
-      optimizer_by_extension(File)
+    Optimizers ->
+      case is_list(Optimizers) of
+        true ->
+          Optimizers;
+        false ->
+          [Optimizers]
+      end
   end.
 
 optimizer_by_extension(File) ->
@@ -94,7 +113,7 @@ optimizer_by_extension(File) ->
   end.
 
 find_executable(Exec) when is_atom(Exec) ->
-  case doteki:get_env(Exec, undefined) of
+  case doteki:get_env([image_optimizer, Exec], undefined) of
     undefined ->
       case image_optimizer:os_find_executable(bucs:to_string(Exec)) of
         false ->

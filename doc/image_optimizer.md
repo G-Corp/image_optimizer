@@ -14,11 +14,21 @@ __This module defines the `image_optimizer` behaviour.__<br /> Required callback
 
 
 
+### <a name="type-optimizer">optimizer()</a> ###
+
+
+<pre><code>
+optimizer() = pngquant | optipng | jpegoptim | cjpeg | jpeg_recompress | svgo | scour | gifsicle
+</code></pre>
+
+
+
+
 ### <a name="type-option">option()</a> ###
 
 
 <pre><code>
-option() = {quality, integer()} | {quiet, true | false} | {strip_metadata, true | false} | {output, <a href="file.md#type-filename_all">file:filename_all()</a>}
+option() = {quality, integer()} | {use, <a href="#type-optimizer">optimizer()</a> | [<a href="#type-optimizer">optimizer()</a>]} | {quiet, true | false} | {strip_metadata, true | false} | {output, <a href="file.md#type-filename_all">file:filename_all()</a>}
 </code></pre>
 
 
